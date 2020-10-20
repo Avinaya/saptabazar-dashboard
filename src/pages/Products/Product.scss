@@ -1,0 +1,44 @@
+@import "../../styles/variable";
+.product_wrapper {
+  height: 100vh;
+  background: #ffff;
+  box-shadow: 0 0 10px $color_boxshadow;
+  -moz-box-shadow: 0 0 10px $color_boxshadow;
+  -webkit-box-shadow: 0 0 10px $color_boxshadow;
+  -o-box-shadow: 0 0 10px $color_boxshadow;
+
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color_background;
+    padding: 1rem;
+    border-bottom: 1px solid $color_divider;
+    &_title {
+      & span {
+        font-size: 1.3rem;
+        color: $color_text;
+
+        &:nth-child(2) {
+          font-size: 0.9rem;
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    &_button {
+      & button {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 0.6rem 1.5rem;
+        border-radius: 5px;
+        background-color: $color_button;
+        color: #ffff;
+        border: 0;
+        border-color: $color_button;
+        outline: none;
+      }
+    }
+  }
+}

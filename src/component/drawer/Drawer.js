@@ -18,14 +18,15 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MainList from "./MainList";
 import SecondaryList from "./SecondaryList";
+import "./Drawer.scss";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
+      <Link color="inherit" href="https://avinayaacharya.com.np/">
+        SaptaBazzar
+      </Link>
       {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -49,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   },
   appBar: {
+    backgroundColor: "#212529",
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
@@ -73,9 +75,12 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   drawerPaper: {
+    overflow:"hidden",
     position: "relative",
     whiteSpace: "nowrap",
     width: drawerWidth,
+    backgroundColor: "#292833",
+    color: "#f2f3f8",
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -87,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    width: theme.spacing(7),
+    width: theme.spacing(0),
     [theme.breakpoints.up("sm")]: {
       width: theme.spacing(9),
     },
@@ -111,11 +116,16 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  copyRight: {
+    position: "fixed",
+    left: 0,
+    bottom: 0,
+  },
 }));
 
 export default function MainDrawer(props) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
   };

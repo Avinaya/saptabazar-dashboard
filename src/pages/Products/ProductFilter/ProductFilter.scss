@@ -1,0 +1,64 @@
+@import "../../../styles/variable";
+
+.product_wrapper_filter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-gap: 3vw;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+
+  &_item {
+    display: flex;
+    align-items: center;
+  }
+  &_search {
+    & span {
+      display: flex;
+      align-items: center;
+      border: 1px solid $color_select;
+      & input {
+        font-size: medium;
+        border: none;
+        padding: 0.6rem 0.4rem;
+        outline: none;
+      }
+    }
+  }
+  &_button {
+    & button {
+      width: 100%;
+      padding: 0.6rem 0.4rem;
+      cursor: pointer;
+      border-radius: 5px;
+      background-color: $color_filter;
+      color: #ffff;
+      border: 0;
+      border-color: $color_filter;
+      outline: none;
+    }
+  }
+
+  &_title {
+    font-weight: 600;
+    color: $color_text;
+    margin-right: 0.5rem;
+  }
+
+  &_select {
+      width: 100%;
+    font-size: medium;
+    padding: 0.6rem 0.2rem;
+    outline: none;
+    border-color: $color_select;
+  }
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.search_icon {
+  color: $color_text;
+  cursor: pointer;
+}
